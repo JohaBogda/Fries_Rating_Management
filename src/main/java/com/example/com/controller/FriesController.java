@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -29,6 +31,13 @@ public class FriesController {
 	// get all fries:
 	public List<Fries> getAllFries(){
 		return friesRepository.findAll();
+	}
+	
+	// create fries rest API: 
+	// PostMapping for mapping HTTP POST requests onto specific handler methods; 
+	@PostMapping("/fries")
+	public Fries createFries(@RequestBody Fries fries) {
+		return friesRepository.save(fries);
 	}
 	
 }
