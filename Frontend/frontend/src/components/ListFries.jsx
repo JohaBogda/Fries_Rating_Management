@@ -10,6 +10,8 @@ class ListFries extends Component {
                // need to create an array stored in the state; used in the <tbody> to map over inputs:
                  fries:[] 
            }
+           // when clicking the button to add Fries it brings you to this method; bind():
+           this.addFries = this.addFries.bind(this);
        }
     
     // componentdidmount method called immediately after component is mounted; calls upon getFries() from FriesService.js: 
@@ -19,11 +21,19 @@ class ListFries extends Component {
             this.setState({fries: res.data});
         });
     }
+
+    // method after clicking button to addFries() which redirects to route /add-fries with history method: 
+    addFries(){
+        this.props.history.push("/add-fries");
+    }
     
     render() {
         return (
             <div>
                 <h2 className = "text-center">Best Fries in Town</h2>
+                <div className = "row">
+                    <button className="btn-btn-primary" onClick={this.addFries}>Add Fries</button>
+                </div>
                 <div className = "row">
                     {/* each table needs a thead, tbody, and tfoot */}
                     <table className = "table table-striped table-bordered">
