@@ -12,6 +12,7 @@ class ListFries extends Component {
            }
            // when clicking the button to add Fries it brings you to this method; bind():
            this.addFries = this.addFries.bind(this);
+           this.editFries = this.editFries.bind(this);
        }
     
     // componentdidmount method called immediately after component is mounted; calls upon getFries() from FriesService.js: 
@@ -25,6 +26,11 @@ class ListFries extends Component {
     // method after clicking button to addFries() which redirects to route /add-fries with history method: 
     addFries(){
         this.props.history.push("/add-fries");
+    }
+
+    // update button with id: 
+    editFries(id){
+        this.props.history.push(`/update-fries/${id}`);
     }
     
     render() {
@@ -62,6 +68,9 @@ class ListFries extends Component {
                                         <td>{fries.rating}</td>
                                         <td>{fries.notes}</td>
                                         <td>{fries.type}</td>
+                                        <td>
+                                            <button onClick = { () => this.editFries(fries.id)} className="btn btn-info">Update</button>
+                                        </td>
 
                                     </tr>
                                 )
