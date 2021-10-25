@@ -21,7 +21,7 @@ import com.example.com.model.Fries;
 import com.example.com.respository.FriesRepository;
 
 // to avoid "blocked by CORS policy" error on localhost:3000 = API won't render; so add: 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3001")
 // here is where the rest API is created
 @RestController
 // create standard URL starting point:

@@ -33,12 +33,15 @@ class CreateFries extends Component {
             return
         } else {
             FriesService.getFriesById(this.state.id).then((res) => {
+                console.log(res.data);
+
                 let fries = res.data;
                 this.setState({
-                    restaurant: fries.restaurant,
-                    city: fries.city,
-                    rating: fries.rating,
+
+                    city: this.city,
                     notes: fries.notes,
+                    rating: fries.rating,
+                    restaurant: fries.restaurant,
                     type: fries.type
                 })
             })
@@ -78,7 +81,7 @@ class CreateFries extends Component {
 
         console.log(fries);
 
-        if (this.state.id == -1) {
+        if (this.state.id === "_add") {
 
             // once sent to be stored in database: 
             FriesService.createFries(fries).then(res => {
@@ -147,7 +150,7 @@ class CreateFries extends Component {
                                             value={this.state.type} onChange={this.changeTypeHandler} />
                                     </div>
 
-                                    <button className="btn btn-success" onCLick={this.saveOrUpdateFries}>Save</button>
+                                    <button className="btn btn-success" onClick={this.saveOrUpdateFries}>Save</button>
                                     <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission</button>
                                 </form>
                             </div>
