@@ -1,10 +1,13 @@
 package com.example.com.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,5 +74,18 @@ public class FriesController {
 		return ResponseEntity.ok(updatedFries);
 		
 		
+	}
+	
+	// delete fries rest API: 
+	@DeleteMapping("/fries/{id}")
+	public ResponseEntity<Map<String, Boolean>> deleteFries(@PathVariable int id){
+		Fries fries = friesRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Fries don't exist with id:"+ id));
+		
+		friesRepository.delete(fries);
+		// after getting deleted:
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("deleted",Boolean.TRUE);
+		return ResponseEntity.ok(response);
 	}
 }

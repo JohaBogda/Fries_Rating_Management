@@ -29,12 +29,12 @@ class CreateFries extends Component {
     componentDidMount() {
 
         // step 4: 
-        if (this.state.id == -1) {
+        if (this.state.id === "_add") {
             return
         } else {
             FriesService.getFriesById(this.state.id).then((res) => {
                 let fries = res.data;
-                this.setState.bind({
+                this.setState({
                     restaurant: fries.restaurant,
                     city: fries.city,
                     rating: fries.rating,
@@ -98,7 +98,7 @@ class CreateFries extends Component {
 
     // same router /add-fries/id but different titles depending on what button us clicked:
     getTitle() {
-        if (this.state.id == -1) {
+        if (this.state.id === "_add") {
             return <h3 className="text-center">Add Fries</h3>
         } else {
             return <h3 className="text-center">Update Fries</h3>
@@ -108,6 +108,7 @@ class CreateFries extends Component {
     render() {
         return (
             <div>
+                <br></br>
                 <div className="container">
                     <div className="row">
                         <div className="card col-md-6 offset-md-3 offset-md-3">

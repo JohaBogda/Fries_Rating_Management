@@ -23,6 +23,10 @@ class FriesService {
     updateFries(fries,friesId){
         return axios.put(FRIES_API_BASE_URL + '/' + friesId, fries);
     }
+
+    deleteFries(friesId){
+        return axios.delete(FRIES_API_BASE_URL + "/" + friesId);
+    }
 }
 
 // exporting an object of this class: 
