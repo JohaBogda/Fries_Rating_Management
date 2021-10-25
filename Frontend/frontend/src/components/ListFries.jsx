@@ -25,12 +25,12 @@ class ListFries extends Component {
 
     // method after clicking button to addFries() which redirects to route /add-fries with history method: 
     addFries(){
-        this.props.history.push("/add-fries");
+        this.props.history.push("/add-fries/-1");
     }
 
     // update button with id: 
     editFries(id){
-        this.props.history.push(`/update-fries/${id}`);
+        this.props.history.push(`/add-fries/${id}`);
     }
     
     render() {

@@ -19,6 +19,10 @@ class FriesService {
     getFriesById(friesId){
         return axios.get(FRIES_API_BASE_URL + "/" + friesId);
     }
+
+    updateFries(fries,friesId){
+        return axios.put(FRIES_API_BASE_URL + '/' + friesId, fries);
+    }
 }
 
 // exporting an object of this class: 

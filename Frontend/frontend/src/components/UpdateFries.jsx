@@ -71,11 +71,10 @@ class UpdateFries extends Component {
 
         console.log(fries);
 
-        // once sent to be stored in database: 
-        FriesService.createFries(fries).then(res => {
-            // navigate to homepage: 
-            this.props.history.push("/fries");
+        FriesService.updateFries(fries, this.state.id).then(res => {
+            this.props.history.push('/fries');
         })
+
     }
 
     cancel() {

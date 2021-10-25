@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ListFries from './components/ListFries';
 import CreateFries from './components/CreateFries';
-import UpdateFries from './components/UpdateFries';
+// import UpdateFries from './components/UpdateFries';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
                {/* when localhost:3000 gets called upon the following components/routes get rendered */}
               <Route path = "/" exact component = {ListFries}></Route>
               <Route path = "/fries"  component = {ListFries} ></Route>
-              <Route path = "/add-fries" component = {CreateFries} ></Route>
-              <Route path = "/update-fries/:id" component = {UpdateFries} ></Route>
+              <Route path = "/add-fries/:id" component = {CreateFries} ></Route>
+              {/* <Route path = "/update-fries/:id" component = {UpdateFries} ></Route> */}
             </Switch>
           </div>
           <Footer />
