@@ -11,7 +11,15 @@ class FriesService {
         return axios.get(FRIES_API_BASE_URL);
     }
 
+    // send the created fries to the rest API: 
+    createFries(fries){
+        return axios.post(FRIES_API_BASE_URL, fries);
+    }
+
+    getFriesById(friesId){
+        return axios.get(FRIES_API_BASE_URL + "/" + friesId);
+    }
 }
 
 // exporting an object of this class: 
-export default new FriesService;
+export default new FriesService();

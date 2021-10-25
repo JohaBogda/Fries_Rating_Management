@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FriesService from '../services/FriesService';
 
 class CreateFries extends Component {
     constructor(props) {
@@ -31,21 +32,33 @@ class CreateFries extends Component {
     }
 
     changeRatingHandler=(event)=> {
-        this.setState({city: event.target.value});
+        this.setState({rating: event.target.value});
     }
 
     changeNotesHandler=(event)=> {
-        this.setState({city: event.target.value});
+        this.setState({notes: event.target.value});
     }
 
     changeTypeHandler=(event)=> {
-        this.setState({city: event.target.value});
+        this.setState({type: event.target.value});
     }
 
     saveFries = (e) => {
         e.preventDefault();
-        let fries = {restaurant: this.state.restaurant, city: this.state.city, rating: this.state.rating, notes: this.state.notes, type: this.state.type};
-        console.log("fries => " + JSON.stringify(fries));
+        let fries = {
+            restaurant: this.state.restaurant,
+            city: this.state.city, 
+            rating: this.state.rating, 
+            notes: this.state.notes, 
+            type: this.state.type};
+
+        console.log(fries);
+
+        // once sent to be stored in database: 
+        FriesService.createFries(fries).then(res =>{
+            // navigate to homepage: 
+            this.props.history.push("/fries");
+        })
     }
 
     cancel(){
