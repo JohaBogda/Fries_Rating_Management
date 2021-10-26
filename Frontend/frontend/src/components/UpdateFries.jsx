@@ -86,37 +86,32 @@ class UpdateFries extends Component {
             <div>
                 <div className="container">
                     <div className="row">
-                        <div className="card col-md-6 offset-md-3 offset-md-3">
+                        <div className="card col-md-6 offset-md-3 offset-md-3 ">
                             <h3 className="text-center">Update Fries</h3>
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
                                         <label>Name of Restaurant</label>
-                                        <input placeholder="Restaurant" name="restaurant" className="form-control"
-                                            value={this.state.restaurant} onChange={this.changeRestaurantHandler} />
+                                        <input value={this.state.restaurant} onChange={this.changeRestaurantHandler} />
                                     </div>
                                     <div className="form-group">
                                         <label>City</label>
-                                        <input placeholder="City" name="city" className="form-control"
-                                            value={this.state.city} onChange={this.changeCityHandler} />
+                                        <input value={this.state.city} onChange={this.changeCityHandler} />
                                     </div>
 
                                     <div className="form-group">
                                         <label>Rate dem fries ☆ out of 5</label>
-                                        <input placeholder="Rating" name="rating" className="form-control"
-                                            value={this.state.rating} onChange={this.changeRatingHandler} />
+                                        <input value={this.state.rating} onChange={this.changeRatingHandler} />
                                     </div>
 
                                     <div className="form-group">
                                         <label>Important Notes</label>
-                                        <input placeholder="Notes" name="notes" className="form-control"
-                                            value={this.state.notes} onChange={this.changeNotesHandler} />
+                                        <input value={this.state.notes} onChange={this.changeNotesHandler} />
                                     </div>
 
                                     <div className="form-group">
                                         <label>What typah Fries we talking:</label>
-                                        <input placeholder="Type" name="type" className="form-control"
-                                            value={this.state.type} onChange={this.changeTypeHandler} />
+                                        <input value={this.state.type} onChange={this.changeTypeHandler} />
                                     </div>
 
                                     <button className="btn btn-success" onCLick={this.updateFries}>Save</button>

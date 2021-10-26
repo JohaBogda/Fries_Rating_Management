@@ -13,38 +13,52 @@ class ViewFries extends Component {
     }
 
     // method immediately called after mounted: 
-    componentDidMount(){
+    componentDidMount() {
         FriesService.getFriesById(this.state.id).then(res => {
-            this.setState({fries: res.data});
+            this.setState({ fries: res.data });
         })
+    }
+
+    back() {
+        this.props.history.push("/fries");
     }
 
     render() {
         return (
-            <div>
-                <br></br>
-                <div className = "card col-md-6 offset-md-3">
-                    <h3 className = "text-center">Fry Details</h3>
-                    <div className = "card-body">
-                        <div className = "row">
-                            <label>Restaurant</label>
-                            <div>{ this.state.fries.restaurant}</div>
+                <div className="view" className="card col-md-6 offset-md-3 text-center text-black">
+                    <h3>Fry Details</h3>
+                    <div >
+                        <div>
+                            <div className="labelRow">
+                                <label>Restaurant:</label>
+                                <div>{this.state.fries.restaurant}</div>
+                            </div>
 
-                            <label>City</label>
-                            <div>{ this.state.fries.city}</div>
+                            <div className="labelRow">
+                                <label>City:</label>
+                                <div>{this.state.fries.city}</div>
+                            </div>
 
-                            <label>Rating</label>
-                            <div>{ this.state.fries.rating}</div>
+                            <div className="labelRow">
+                                <label>Rated:</label>
+                                <div>{this.state.fries.rating}</div>
+                            </div>
 
-                            <label>Notes</label>
-                            <div>{ this.state.fries.notes}</div>
+                            <div className="labelRow">
+                                <label>Notes:</label>
+                                <div>{this.state.fries.notes}</div>
+                            </div>
 
-                            <label>Type</label>
-                            <div>{ this.state.fries.type}</div>
+                            <div className="labelRow">
+                                <label>Type:</label>
+                                <div>{this.state.fries.type}</div>
+                            </div>
+
                         </div>
                     </div>
-                </div>       
-            </div>
+                    <button onClick={this.back.bind(this)}>Take me back</button>
+                </div>
+
         );
     }
 }

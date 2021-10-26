@@ -1,20 +1,23 @@
 .Header{
-  background-color: #4A0603;
+  /* background-color: #F88604; */
   grid-area: Header;
   text-align: center;
-  color: #a5616d;
   font-size: 30px;
-  font-weight: bold;
+  color: white;
 }
 
 .App{
-  background-image: url("https://media.istockphoto.com/photos/diverse-keto-dishes-picture-id1280158821?k=20&m=1280158821&s=612x612&w=0&h=ldZrVPPLrCQW1jEnHqf7L_FrHJePpsFr777nDsK_QMY=");
+  background-image: url("https://images.unsplash.com/photo-1550259114-ad7188f0a967?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=880&q=80") ;
   background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
+  top: 0;
+  font-family: ink free;
+  font-size: 20px;
+  font-weight: bolder;
   display: grid;
   grid-gap: 5px;
-  grid-template-rows: 1fr 2fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  grid-template-rows: 1fr 3fr 1fr;
   grid-template-areas: 
   "Header  " 
   "  .. " 
@@ -22,24 +25,51 @@
 }
 
 .Footer {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   /* height: 50px; */
-  background-color: #4A0603;
   text-align:center;
   color: white;
+  bottom: 0;
+
 }
 
-button{
-  background-color: #EEB5BF;
-  border-radius: 5px;
-  color: #a5616d;
+
+h2{
+text-align: center;}
+
+button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
   cursor: pointer;
-  height: 40px;
-  width: 80px;
+  text-align: center;
+  outline: none;
+  color: rgb(224, 7, 7);
+  background-color: #faee81;
+  border: none;
+  font-weight: bolder;
 }
 
+button:hover {
+  background-color: #fdac61;
+  transition: 0.3s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+button:active {
+  background-color: #3e8e41;
+  transform: translateY(1px);
+}
+
+
+.addFriesButton{
+  width: 300px;
+  margin: auto;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* to get the stars rating: */
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
@@ -53,5 +83,31 @@ button{
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
+}
+
+/* table{
+  width:100%;
+  border: 1px solid grey;
+} */
+
+thead{
+	background:#ffa33a;
+  color: rgb(245, 245, 120);
+	/* padding:(#1772FF * 1.5) 0; */
+}
+
+tbody{
+  color: white;
+}
+
+.actions{
+  width: 370px;
+}
+
+.labelRow{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  gap: 5px;
 }
 

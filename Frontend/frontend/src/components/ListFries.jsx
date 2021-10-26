@@ -52,11 +52,11 @@ class ListFries extends Component {
             <div>
                 <h2>Best Fries in Town</h2>
                 <div>
-                    <button onClick={this.addFries}>Add Fries</button>
+                    <button className = "addFriesButton" onClick={this.addFries}>Add Fries</button>
                 </div>
                 <div>
                     {/* each table needs a thead, tbody, and tfoot */}
-                    <table>
+                    <table className="table">
                         {/* 1. thead: */}
                         <thead>
                             {/* tr tag defines a row: */}
@@ -67,7 +67,7 @@ class ListFries extends Component {
                                 <th className="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></th>
                                 <th>Notes</th>
                                 <th>Type</th>
-                                {/* <th>Actions</th> */}
+                                <th className="actions"></th>
                             </tr>
                         </thead>
                         {/* 2. tbody: */}
@@ -82,10 +82,10 @@ class ListFries extends Component {
                                             <td>{fries.rating}</td>
                                             <td>{fries.notes}</td>
                                             <td>{fries.type}</td>
-                                            <td>
-                                                <button onClick={() => this.editFries(fries.id)} className="btn btn-info">Update</button>
-                                                <button style={{ marginLeft: "10px" }} onClick={() => this.deleteFries(fries.id)} className="btn btn-danger">Delete</button>
-                                                <button style={{ marginLeft: "10px" }} onClick={() => this.viewFries(fries.id)} className="btn btn-info">View</button>
+                                            <td className="allButtons"> 
+                                                <button onClick={() => this.editFries(fries.id)} className="updateButton">Update</button>
+                                                <button onClick={() => this.deleteFries(fries.id)} className="deleteButton">Delete</button>
+                                                <button onClick={() => this.viewFries(fries.id)} className="viewButton">View</button>
                                             </td>
 
                                         </tr>
