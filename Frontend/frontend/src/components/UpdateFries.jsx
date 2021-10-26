@@ -102,7 +102,7 @@ class UpdateFries extends Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label>Rate dem fries 1-10</label>
+                                        <label>Rate dem fries ☆ out of 5</label>
                                         <input placeholder="Rating" name="rating" className="form-control"
                                             value={this.state.rating} onChange={this.changeRatingHandler} />
                                     </div>

@@ -38,7 +38,7 @@ class CreateFries extends Component {
                 let fries = res.data;
                 this.setState({
 
-                    city: this.city,
+                    city: fries.city,
                     notes: fries.notes,
                     rating: fries.rating,
                     restaurant: fries.restaurant,
@@ -133,7 +133,7 @@ class CreateFries extends Component {
                                     </div>
 
                                     <div className="form-group">
-                                        <label>Rate dem fries 1-10</label>
+                                        <label>Rate dem fries ☆ out of 5</label>
                                         <input placeholder="Rating" name="rating" className="form-control"
                                             value={this.state.rating} onChange={this.changeRatingHandler} />
                                     </div>
@@ -150,8 +150,8 @@ class CreateFries extends Component {
                                             value={this.state.type} onChange={this.changeTypeHandler} />
                                     </div>
 
-                                    <button className="btn btn-success" onClick={this.saveOrUpdateFries}>Save</button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission</button>
+                                    <button onClick={this.saveOrUpdateFries}>Save</button>
+                                    <button onClick={this.cancel.bind(this)}>Abort Mission</button>
                                 </form>
                             </div>
 

@@ -10,7 +10,7 @@ import ViewFries from './components/ViewFries';
 function App() {
   return (
     //display all components: 
-    <div>
+    <div className = "App">
       <Router>
           <Header />
           <div className="container">

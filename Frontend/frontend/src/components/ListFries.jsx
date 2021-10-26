@@ -50,13 +50,13 @@ class ListFries extends Component {
     render() {
         return (
             <div>
-                <h2 className="text-center">Best Fries in Town</h2>
-                <div className="row">
-                    <button className="btn-btn-primary" onClick={this.addFries}>Add Fries</button>
+                <h2>Best Fries in Town</h2>
+                <div>
+                    <button onClick={this.addFries}>Add Fries</button>
                 </div>
-                <div className="row">
+                <div>
                     {/* each table needs a thead, tbody, and tfoot */}
-                    <table className="table table-striped table-bordered">
+                    <table>
                         {/* 1. thead: */}
                         <thead>
                             {/* tr tag defines a row: */}
@@ -64,10 +64,10 @@ class ListFries extends Component {
                                 {/* th tag defines header cell (td would then definite data cell) ): */}
                                 <th>Restaurant Name</th>
                                 <th>City</th>
-                                <th>Rating</th>
+                                <th className="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></th>
                                 <th>Notes</th>
                                 <th>Type</th>
-                                <th>Actions</th>
+                                {/* <th>Actions</th> */}
                             </tr>
                         </thead>
                         {/* 2. tbody: */}
