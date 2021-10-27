@@ -6,6 +6,8 @@ class Footer extends Component {
             <div>
                 <footer className="Footer">
                     <span>Enjoying one fry at a time.. - Jo</span>
+
+
                 </footer>
             </div>
         );

@@ -26,7 +26,7 @@ class ListFries extends Component {
 
     // method after clicking button to addFries() which redirects to route /add-fries with history method: 
     addFries() {
-        this.props.history.push("/add-fries/_add");
+        this.props.history.push("/add-fries/add");
     }
 
     // update button with id: 
@@ -50,7 +50,6 @@ class ListFries extends Component {
     render() {
         return (
             <div>
-                <h2>Best Fries in Town</h2>
                 <div>
                     <button className = "addFriesButton" onClick={this.addFries}>Add Fries</button>
                 </div>
@@ -83,9 +82,9 @@ class ListFries extends Component {
                                             <td>{fries.notes}</td>
                                             <td>{fries.type}</td>
                                             <td className="allButtons"> 
-                                                <button onClick={() => this.editFries(fries.id)} className="updateButton">Update</button>
-                                                <button onClick={() => this.deleteFries(fries.id)} className="deleteButton">Delete</button>
-                                                <button onClick={() => this.viewFries(fries.id)} className="viewButton">View</button>
+                                                <button onClick={() => this.editFries(fries.id)} >Update</button>
+                                                <button onClick={() => this.deleteFries(fries.id)} >Delete</button>
+                                                <button onClick={() => this.viewFries(fries.id)} >View</button>
                                             </td>
 
                                         </tr>

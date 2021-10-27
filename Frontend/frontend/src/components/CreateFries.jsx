@@ -29,7 +29,7 @@ class CreateFries extends Component {
     componentDidMount() {
 
         // step 4: 
-        if (this.state.id === "_add") {
+        if (this.state.id === "add") {
             return
         } else {
             FriesService.getFriesById(this.state.id).then((res) => {
@@ -81,7 +81,7 @@ class CreateFries extends Component {
 
         console.log(fries);
 
-        if (this.state.id === "_add") {
+        if (this.state.id === "add") {
 
             // once sent to be stored in database: 
             FriesService.createFries(fries).then(res => {
@@ -101,7 +101,7 @@ class CreateFries extends Component {
 
     // same router /add-fries/id but different titles depending on what button us clicked:
     getTitle() {
-        if (this.state.id === "_add") {
+        if (this.state.id === "add") {
             return <h3 className="text-center">Add Fries</h3>
         } else {
             return <h3 className="text-center">Update Fries</h3>
@@ -144,12 +144,19 @@ class CreateFries extends Component {
                                             value={this.state.notes} onChange={this.changeNotesHandler} />
                                     </div>
 
-                                    <div className="form-group">
-                                        <label>What typah Fries we talking:</label>
-                                        <input placeholder="Type" name="type" className="form-control"
-                                            value={this.state.type} onChange={this.changeTypeHandler} />
-                                    </div>
 
+                                    <label className="form-group" for="business">Typah Fries: </label>
+                                    {/* add value & onChange to <select> in order to have values saved to database: */}
+                                    <select value={this.state.type} onChange={this.changeTypeHandler} id="business" name="business">
+                                        <option placeholder="Type" name="type" className="form-control" value="Standard">Classic</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Curly">Curly</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Sweet Potato">Sweet Potato</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Waffle">Waffle</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Steak/ Wedge">Steak/ Wedge</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Crinkle">Crinkle</option>
+                                    </select>
+
+                                    <br></br>
                                     <button onClick={this.saveOrUpdateFries}>Save</button>
                                     <button onClick={this.cancel.bind(this)}>Abort Mission</button>
                                 </form>
