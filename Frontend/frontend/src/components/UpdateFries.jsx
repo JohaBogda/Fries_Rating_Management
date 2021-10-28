@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FriesService from '../services/FriesService';
+import fries from "../Images/fries.png";
 
 class UpdateFries extends Component {
     // similar code as CreateFries.jsx:
@@ -115,7 +116,7 @@ class UpdateFries extends Component {
                                     </div>
 
                                     <button className="btn btn-success" onCLick={this.updateFries}>Save</button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission</button>
+                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission<img id="icon" src={fries} alt="fries"></img></button>
                                 </form>
                             </div>
 
