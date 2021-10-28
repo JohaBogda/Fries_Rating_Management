@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FriesService from '../services/FriesService';
+import trash from "../Images/trash.png";
 
 class ListFries extends Component {
 
@@ -50,6 +51,7 @@ class ListFries extends Component {
     render() {
         return (
             <div>
+                <h2>Best Fries in Town</h2>
                 <div>
                     <button className = "addFriesButton" onClick={this.addFries}>Add Fries</button>
                 </div>
@@ -83,8 +85,8 @@ class ListFries extends Component {
                                             <td>{fries.type}</td>
                                             <td className="allButtons"> 
                                                 <button onClick={() => this.editFries(fries.id)} >Update</button>
-                                                <button onClick={() => this.deleteFries(fries.id)} >Delete</button>
-                                                <button onClick={() => this.viewFries(fries.id)} >View</button>
+                                                <button onClick={() => this.deleteFries(fries.id)} className="deleteButton"><img className="icon" src={trash} alt="trash"></img></button>
+                                                <button onClick={() => this.viewFries(fries.id)} className="viewButton">View</button>
                                             </td>
 
                                         </tr>

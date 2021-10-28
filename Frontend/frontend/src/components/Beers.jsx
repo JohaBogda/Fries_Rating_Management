@@ -5,6 +5,9 @@ class Beers extends Component {
     constructor(props) {
         super(props);
         this.state = {beers:[]}
+
+        // Another try to render API: 
+        // this.state = {beers:[]}
         // query: "";
         // results: {};
         // loading: false;
@@ -19,17 +22,19 @@ class Beers extends Component {
         .then(resp=>this.setState({beers:resp}))
     }
 
-    handleOnInputChange = (event) => {
-        const query = event.target.value;
-        console.log(query)
-        this.setState({query:query})
-    }
+//    // TBD for the API search: 
+//     handleOnInputChange = (event) => {
+//         const query = event.target.value;
+//         console.log(query)
+//         this.setState({query:query})
+//     }
 
-    handleSubmit = (event) => {
-        //default behavior to avoid website from refreshing entirely 
-        event.preventDefault()
+//     // TBD for the API search:
+//     handleSubmit = (event) => {
+//         //default behavior to avoid website from refreshing entirely 
+//         event.preventDefault()
         
-    }
+//     }
 
     render() {
         return (
@@ -38,7 +43,7 @@ class Beers extends Component {
                 <br></br>
                 <p>Follow the below list of matches made in heaven for your ultimate French... or shall I say Belgian Fries experience: </p>
                 <h5>Classic French Fries <span className="heart"> ♡ </span>American Lager</h5>
-                <h5>Curly/ Sweet Potato <span className="heart"> ♡ </span>Witbier</h5>
+                <h5>Curly/ Sweet Potato <span className="heart"> ♡ </span>Witbier/ IPA</h5>
                 <h5>Poutine Smothered<span className="heart"> ♡ </span>Dark/ Brown Ale</h5>
                 <h5>Steak/ Wedges <span className="heart"> ♡ </span>Pale Lager</h5>
 
@@ -48,11 +53,8 @@ class Beers extends Component {
                     <button type="submit" form="form1" value="Submit">Submit</button>
                 </form>
 
-{/* To only render the beer name & Tagline:  */}
-                {/* constructor(props) {
-        super(props);
-        this.state = {beers:[]}
-                {this.state.beers.map(beer=><div key={beer.id} >{beer.name}.{beer.tagline}</div>)} */}
+
+                {this.state.beers.map(beer=><div key={beer.id} >Name: {beer.name}.<br></br>Tagline:{beer.tagline}.<br></br>Description:{beer.description}</div>)}
 
             </div>
         );

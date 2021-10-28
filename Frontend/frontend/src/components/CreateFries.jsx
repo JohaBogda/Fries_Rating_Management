@@ -148,7 +148,7 @@ class CreateFries extends Component {
                                     <label className="form-group" for="business">Typah Fries: </label>
                                     {/* add value & onChange to <select> in order to have values saved to database: */}
                                     <select value={this.state.type} onChange={this.changeTypeHandler} id="business" name="business">
-                                        <option placeholder="Type" name="type" className="form-control" value="Standard">Classic</option>
+                                        <option placeholder="Type" name="type" className="form-control" value="Classic">Classic</option>
                                         <option placeholder="Type" name="type" className="form-control" value="Curly">Curly</option>
                                         <option placeholder="Type" name="type" className="form-control" value="Sweet Potato">Sweet Potato</option>
                                         <option placeholder="Type" name="type" className="form-control" value="Waffle">Waffle</option>

@@ -116,7 +116,7 @@ class UpdateFries extends Component {
                                     </div>
 
                                     <button className="btn btn-success" onCLick={this.updateFries}>Save</button>
-                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission<img id="icon" src={fries} alt="fries"></img></button>
+                                    <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{ marginLeft: "10px" }}>Abort Mission</button>
                                 </form>
                             </div>
 
